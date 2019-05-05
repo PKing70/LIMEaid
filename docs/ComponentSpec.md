@@ -24,3 +24,5 @@ Describe how the above software components interact to accomplish at least one o
 ## Preliminary plan
 
 A list of tasks in priority order.
+
+Javier WAS HERE
