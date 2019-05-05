@@ -1,4 +1,4 @@
-University of Washington MS Data Science
+__University of Washington MS Data Science__
 Data 515  Spring 2019
 
 __Instructors:__
