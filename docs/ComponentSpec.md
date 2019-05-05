@@ -54,3 +54,20 @@ In order to gain insight, the data scientist needs to develop intuition on how t
 
 ## Preliminary plan
 
+Our preliminary plan consists of a two-pronged approach:
+
+For module one, the Machine Learning model:
+
+- Inspection of the datasets we plan to employ.
+- Implementation of the data_cleanse component.
+- Fitting of a number of ML models to classify colleges and majors into potential salary brackets.
+
+For the LIME module:
+
+- Do additional research on some of the mathematical and logistic subtleties of sampling and optimization for LIME.
+- Build and test the lime_sampler.
+- Build and test the lime_fit.
+- Build and test the lime_optim.
+- Do end-to-end testing of the components.
+
+Once the above steps have been completed, we will evaluate the outputs of the ML model(s) using LIME and produce the final report.
