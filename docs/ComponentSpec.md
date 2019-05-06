@@ -25,8 +25,8 @@ Suman Bhagavathula (sumanbh@uw.edu)
 
 Our project has two major modules, each of which can be broken down into multiple components. The two modules are:
 
-    1.- Machine Learning (ML) model that takes a number of predictors as input, including college name, student major, type of school and other, and outputs a likely graduating salary bracket for students from that college/major combination.
-    2.- A LIME module that can help a data scientist understand which predictors played a major role in defining the ML model's output for a particular set of inputs.
+- Machine Learning (ML) model that takes a number of predictors as input, including college name, student major, type of school and other, and outputs a likely graduating salary bracket for students from that college/major combination.
+- A LIME module that can help a data scientist understand which predictors played a major role in defining the ML model's output for a particular set of inputs.
 
 #### _Machine Learning Model_
 
