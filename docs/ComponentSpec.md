@@ -42,15 +42,15 @@ For the second module we will write three components that will provide the desir
 
 The first component, lime_sampler, will take the predictors and corresponding output of one test instance to the ML model and generate randomized samples of the ML model's behavior, using only a randomly selected subset of its inputs. These randomized samples will provide insight on the ML model's behavior in the immediate vicinity of the model's output for the test instance.
 
-For each test instance selected by the first component above, the second componen, lime_fit, will take the randomly selected subset of predictors and randomized samples, and fit a linear model to them. So, for each test instance we'll end up with a set of linear models.
+For each test instance selected by the first component above, the second component, lime_fit, will take the randomly selected subset of predictors and randomized samples, and fit a linear model to them. So, for each test instance we'll end up with a set of linear models.
 
 Our third component, lime_optim, will identify the linear model from component number two that minimizes the error with respect to the output for the selected test instance and generate a human-readable output that will facilitate interpretation of the complex ML model's behavior. For this third component we will most likely leverage ML functions from SciKit, such as LASSO, and graphics functions from Matplotlib.
 
 ### Interactions to accomplish use cases
 
-The interaction is quite simple. The first module is the ML model whose output the data scientist needs to understand. Since the model is complex, direct interpretation of it's output would require too much effort or is simply not possible in human terms.
+The interaction is quite simple. The first module is the ML model that the data scientist needs to understand. Since the model is complex, direct interpretation of its output would require too much effort or is simply not possible in human terms.
 
-In order to gain insight, the data scientist needs to develop intuition on how the predictors at the input of the model affect its output classification, for each test instance. Given that we are dealing with a complex ML model, we use LIME to provide local explanations that will enable the data scientist to acquire intution of what drive's the model's decisions in the vicinity of each specific test instance that are to be interpreted.
+In order to gain insight, the data scientist needs to develop intuition on how the predictors at the input of the model affect its output classification, for each test instance. Given that we are dealing with a complex ML model, we use LIME to provide local explanations that will enable the data scientist to acquire intuition of what drive's the model's decisions in the vicinity of each specific test instance that are to be interpreted.
 
 ### Preliminary plan
 
