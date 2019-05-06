@@ -19,7 +19,7 @@ Francisco Javier Salido Magos (javiers@uw.edu)
 
 Patrick King (pking70@uw.edu)
 
-Suman Bhagavathula
+Suman Bhagavathula (sumanbh@uw.edu)
 
 ## Software components
 
