@@ -24,7 +24,7 @@ Suman Bhagavathula (sumanbh@uw.edu)
 
 ### Background
 
-Machine Learning models are proliferating throughout business, science, and government while becoming more complex than ever before. One of the problems data scientists and users of Machine Learning (ML) face is _interpretability_; how can people explain and comprehend a decision made by complex ML models too complex to be understood in human terms? Interpretability can be critical to those implementing ML models, who need to determine why and how classifiers are working in order to evaluate whether they are effective or flawed. "Customers" of applied ML models, such as an applicants denied loans, or travelers flagged as security risks, should be given reasonable explanations of the decisions made by otherwise opaque systems.
+Machine Learning models are proliferating throughout business, science, and government while becoming more complex than ever before. One of the problems data scientists and users of Machine Learning (ML) face is _interpretability_; how can people explain and comprehend a decision made by complex ML models too complex to be understood in human terms? Interpretability can be critical to those implementing ML models, who need to determine why and how classifiers are working in order to evaluate whether they are effective or flawed. "Customers" of applied ML models, such as an applicant's denied loans, or travelers flagged as security risks, should be given reasonable explanations of the decisions made by otherwise opaque systems.
 
 LIME (Local Interpretable Model-Agnostic Explanations) can be used to provide explanations of specific decisions made by "black box" ML models, and thus alleviate such concerns. With a LIME tool, scientists can identify how a specific output variable (decision) was reached given an instance of input variables, at least a set scoped to be _local_ to a specific output. LIME then is used to produce a simpler-to-explain model, typically linear, in the immediate vicinity of that output (for example, a linear regression line with only a few, most-relevant coefficients rather than many.) Easy to plot and discuss communication can then be produced to "break down" a complex model into _interpretable explanations_. Finally, to count as LIME, the tool really works to produce these explanations regardless of original, complex ML model type, so that only variations of input data local to a specific output variable are needed to work, whether the opaque model itself uses random forests, support vector machines (SVM), and neural networks, or more in an ensemble. Thus, _model-agnostic_.
 
@@ -43,11 +43,11 @@ For this project the following datasets will be used.
 
 Data sourced from the Wall Street Journal has been used on Kaggle to analyze Salaries by college, region, and academic major. (https://www.kaggle.com/wsj/college-salaries). The data is released under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
 
-Additional, related data containing more potentially meaningful variables has been compliled and shared (here)[https://www.kaggle.com/smithashivakumar/college] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
+Additional, related data containing more potentially meaningful variables has been compiled and shared (here)[https://www.kaggle.com/smithashivakumar/college] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
 
 #### College Scorecard
 
-The United States Department of Education has shared the raw data from its College Scorecard page under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/]. This data includes annual rating data from years 2017-1996, and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
+The United States Department of Education has shared the raw data from its College Scorecard page under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/]. This data includes annual rating data from years 2017-1996 and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
 
 ## Use cases
 
@@ -69,7 +69,7 @@ Discover how models classify and be able to choose whether methods used seem mor
 
 2. The LIME tools outputs a csv file containing coefficients of a linear regression and MatPlotLib plot of the best fit linear regression using the most-weighted predictors for the instance.
 
-3. The scientist can compare the predictors and the nature of the fit line and see if one model is better. By doing this enough times, a scientist should be able to debug and improve their model to improve results.
+3. The scientist can compare the predictors and the nature of the fit line and see if one model is better. By doing this with a variety of local inputs from competing models, a scientist should be able to debug and improve their model to improve results.
 
 ### Case 2: Decision explanation
 
@@ -81,7 +81,7 @@ A bank in Germany uses a complex ML model for credit scoring in its mortgage ori
 
 #### Objective
 
-Show how a models made a specific classification in an easy-to-interpret form.
+Show how a model has made a specific classification in an easy-to-interpret form.
 
 #### Interactions
 
