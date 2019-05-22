@@ -39,3 +39,8 @@ script:
 after_success:
     - coverage report
     - coveralls
+
+# generate a coverage report to send to back to user
+after_failure:
+    - coverage report
+    - coveralls
