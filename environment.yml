@@ -1,4 +1,4 @@
-name: LimeProject
+name: limeproject
 channels:
   - defaults
 dependencies:
