@@ -22,14 +22,14 @@ install:
     - conda update -q conda
     - conda info -a
     - conda env create -f environment.yml
-    - source activate limeproject
+    - source activate Data515-LIME
     - conda install coverage
     - conda install coveralls
     - conda install flake8
 
 # a list of commands to run before the main script
 before_script:
-    - flake8 limeproject
+    - flake8 Data515-LIME
 
 # the actual commands to run
 script:
