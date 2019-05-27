@@ -33,7 +33,7 @@ before_script:
 
 # the actual commands to run
 script:
-    - coverage run -m py.test discover
+    - coverage run -m pytest discover
 
 # generate a coverage report to send to back to user
 after_success:
