@@ -38,7 +38,7 @@ before_script:
 
 # the actual commands to run
 script:
-    - py.test --pyargs codebase --cov-report term-missing --cov=DATA515-LIME
+    - py.test --pyargs codebase --cov-report term-missing --cov=codebase
 
 # generate a coverage report to send to back to user
 after_success:
