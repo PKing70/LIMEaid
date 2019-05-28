@@ -38,7 +38,7 @@ before_script:
 
 # the actual commands to run
 script:
-    - py.test --pyargs shablona --cov-report term-missing --cov=DATA515-LIME
+    - py.test --pyargs DATA515-LIME --cov-report term-missing --cov=DATA515-LIME
 
 # generate a coverage report to send to back to user
 after_success:
