@@ -153,8 +153,8 @@ data_norm = preprocessing.scale(data_set.data)
 # clf = clf.fit(data_norm, data_set.target)
 
 # Fitting a Naive Bayes model.
-gnb = GaussianNB()
-clf = gnb.fit(data_norm, data_set.target)
+clf = GaussianNB()
+clf = clf.fit(data_norm, data_set.target)
 
 # Now we generate the random samples.
 # Note that because all four attributes are floats (continuous),
