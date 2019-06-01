@@ -1,8 +1,10 @@
 from codebase.model import loadcollegedataset as lcd
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegressionCV
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn import preprocessing
 
 
 def fitmulticlasslogisticregression(printscore = False):
@@ -12,6 +14,11 @@ def fitmulticlasslogisticregression(printscore = False):
     """
     dataset = lcd.loadcollegedataset()
     x = dataset.drop('SalaryClass',1)
+    prescaledata = x.values
+    min_max_scaler = preprocessing.MinMaxScaler()
+    scaled = min_max_scaler.fit_transform(prescaledata)
+    x = pd.DataFrame(scaled)
+
     y = dataset['SalaryClass']
     xTrain, xTest, yTrain, yTest = train_test_split(x, y, \
         test_size = 0.2, random_state = 0)
@@ -31,6 +38,11 @@ def fitrandomforest(printscore = False):
     """
     dataset = lcd.loadcollegedataset()
     x = dataset.drop('SalaryClass',1)
+    prescaledata = x.values
+    min_max_scaler = preprocessing.MinMaxScaler()
+    scaled = min_max_scaler.fit_transform(prescaledata)
+    x = pd.DataFrame(scaled)
+
     y = dataset['SalaryClass']
     xTrain, xTest, yTrain, yTest = train_test_split(x, y, \
         test_size = 0.2, random_state = 0)
@@ -51,6 +63,11 @@ def fitdecisiontree(printscore = False):
     """
     dataset = lcd.loadcollegedataset()
     x = dataset.drop('SalaryClass',1)
+    prescaledata = x.values
+    min_max_scaler = preprocessing.MinMaxScaler()
+    scaled = min_max_scaler.fit_transform(prescaledata)
+    x = pd.DataFrame(scaled)
+    
     y = dataset['SalaryClass']
     xTrain, xTest, yTrain, yTest = train_test_split(x, y, \
         test_size = 0.2, random_state = 0)
