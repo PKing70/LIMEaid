@@ -1,5 +1,5 @@
 import numpy as np
-import LIMEaid
+import LIMEaid as la
 from sklearn import preprocessing
 from sklearn import datasets
 from sklearn import tree
@@ -38,7 +38,7 @@ perturbed_samples = np.zeros(n)
 # once for each attribute in the Iris dataset.
 for j in range(0, data_set.data.shape[1]):
     array = data_set.data[:, j]
-    output = lime_sample(n, True, array, num_bins)
+    output = la.lime_sample(n, True, array, num_bins)
     perturbed_samples = np.vstack((perturbed_samples, output))
 perturbed_samples = np.transpose(perturbed_samples[1:, ])
 
@@ -56,10 +56,10 @@ x = data_norm[inst_num, :]
 x_class = data_set.target[inst_num]
 
 # Call LIME.
-lime_beta, lime_intercept, lime_weights = lime_fit(x,
-                                                   x_class,
-                                                   perturbed_samples,
-                                                   class_perturb_samples)
+lime_beta, lime_int, lime_weigh = la.lime_fit(x,
+                                              x_class,
+                                              perturbed_samples,
+                                              class_perturb_samples)
 
 # Print output of LIME results.
 print("Instance to be interpreted:")
@@ -70,9 +70,10 @@ for j in range(0, len(lime_beta)):
 print("Classification: ",
       data_set.target_names[data_set.target[inst_num]],
       data_set.target[inst_num])
-print("\nSignificant coefficients from LIME adjusted linear model:")
+print("\nSignificant coefficients from LIME adjusted"
+      " linear model:")
 for j in range(0, len(lime_beta)):
     if(lime_beta[j] != 0):
         print("Feature: ", data_set.feature_names[j],
               "\tCoefficient: ", lime_beta[j])
-print("Intercept: ", lime_intercept)
+print("Intercept: ", lime_int)
