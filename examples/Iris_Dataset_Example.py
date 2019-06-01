@@ -6,7 +6,9 @@ from sklearn import tree
 from sklearn.naive_bayes import GaussianNB
 
 #####################################################################
-# EXAMPLE: How to use the functions.
+# This example uses the functions in the LIMEaid.py package to
+# explain classification of instances from a machine learning model.
+# Example uses either a Naive Bayes or a Decision Tree classifier.
 #####################################################################
 
 # Read Iris dataset
@@ -49,6 +51,9 @@ class_perturb_samples = clf.predict(perturbed_samples)
 # This is the instance we will interpret using LIME.
 inst_num = np.round(np.random.uniform(0, data_set.data.shape[0], 1))
 inst_num = inst_num[0].astype(int)
+# x is the instance we are selecting and x_class is its
+# classification. If you don't want to use a randomly selected
+# instance, use one of your choice.
 x = data_norm[inst_num, :]
 x_class = data_set.target[inst_num]
 
