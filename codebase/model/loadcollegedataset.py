@@ -4,6 +4,9 @@ import pandas as pd
 
 
 def cleanandmergecollegedatasets():
+    """
+    This function cleans and joins the two datasets
+    """
     scorecard = gcd.getmostrecentcohorts()
     salaries = gcd.getsalariesbyregion()
     
@@ -48,15 +51,20 @@ def cleanandmergecollegedatasets():
         pd.merge(salaries, scorecard, on='Formatted School Name', how='inner')
 
     #Keep only the required columns in the final dataframe
-    columnstokeep = ['SalaryClass','HCM2','PREDDEG','HBCU','PBI','MENONLY', \
-    'WOMENONLY','SATVR25','SATVR75','SATMT25','SATMT75','SATWR25','SATWR75','SATVRMID', \
-    'SATMTMID','SATWRMID','ACTCM25','ACTCM75','ACTEN25','ACTEN75','ACTMT25','ACTMT75', \
-    'ACTWR25','ACTWR75','PCIP01','PCIP03','PCIP04','PCIP05','PCIP09','PCIP10','PCIP11', \
-    'PCIP12','PCIP13','PCIP14','PCIP15','PCIP16','PCIP19','PCIP22','PCIP23','PCIP24', \
-    'PCIP25','PCIP26','PCIP27','PCIP29','PCIP30','PCIP31','PCIP38','PCIP39','PCIP40', \
-    'PCIP41','PCIP42','PCIP43','PCIP44','PCIP45','PCIP46','PCIP47','PCIP48','PCIP49', \
-    'PCIP50','PCIP51','PCIP52','PCIP54','DISTANCEONLY','UGDS']
+    columnstokeep = ['SalaryClass','HCM2','SATVR25','SATVR75','SATMT25', \
+    'SATMT75','SATWR25','SATWR75','ACTCM25','ACTCM75','ACTEN25','ACTEN75', \
+    'ACTMT25','ACTMT75','ACTWR25','ACTWR75','PCIP01']
 
     finaldf = formattedjoin[columnstokeep]
 
+    #replace NA values with the mean of the feature
+    finaldf = finaldf.fillna(finaldf.mean())
+
     return finaldf
+
+def loadcollegedataset():
+    """
+    This function just returns the cleaned and joined college dataset
+    """
+    dataset = cleanandmergecollegedatasets()
+    return dataset
