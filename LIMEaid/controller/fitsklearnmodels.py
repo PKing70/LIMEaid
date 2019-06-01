@@ -1,4 +1,6 @@
-from codebase.model import loadcollegedataset as lcd
+import sys, os
+sys.path.append(os.getcwd())
+from LIMEaid.model import loadcollegedataset as lcd
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegressionCV
