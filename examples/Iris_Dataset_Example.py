@@ -20,8 +20,7 @@ num_bins = 25
 # Normalizing Iris attributes.
 data_norm = preprocessing.scale(data_set.data)
 
-# ##################################################
-# Choose one of the machine learning models below
+# Choose one of the machine learning models below:
 
 # Fitting a decision tree model to the iris dataset.
 # clf = tree.DecisionTreeClassifier()
@@ -30,7 +29,6 @@ data_norm = preprocessing.scale(data_set.data)
 # Fitting a Naive Bayes model.
 clf = GaussianNB()
 clf = clf.fit(data_norm, data_set.target)
-# ##################################################
 
 # Now we generate the random samples.
 # Note that because all four attributes are floats (continuous),
