@@ -1,3 +1,5 @@
+import sys, os
+sys.path.append(os.getcwd())
 from LIMEaid.model import getcollegedatasets as gcd
 import numpy as np
 import pandas as pd
