@@ -6,89 +6,80 @@ from sklearn import linear_model
 from sklearn.naive_bayes import GaussianNB
 
 
-def discrete_rand_samples(n, np_vector):
-    """
-    Generates discrete random values w/desired probability distrib.
-
-    Inputs are:
-    - Desired number of random samples, n.
-    - The vector of discrete values that describe the distribution
-      of the random samples that are to be generated, np_vector.
-
-    Output is the vector rand that contains n numbers, chosen at
-    random, with replacement, from those in the values vector.
-    Samples follow the multinomial probability distribution
-    described by multinom_rand.
-    """
-
-    # Extract the list of unique values in np_vector, and the
-    # frequency of each value.
-    values, freqs = np.unique(np_vector, return_counts=True)
-    freqs = freqs/np.sum(freqs)
-    values = values.astype(float)
-
-    # Normalize values to mean zero and unit variance.
-    values = preprocessing.scale(values)
-
-    # Using a multinomial distribution, determine the number
-    # of instances of each class that are to be generated.
-    multinom_rand = np.random.multinomial(n, freqs, 1)[0]
-
-    # rand will contain the list of instances that are generated
-    # based on the numbers in multinom_rand.
-    rand = np.zeros(n)
-    k = 0
-    for j in range(0, len(values)):
-        rand[k:k+multinom_rand[j]] = values[j]
-        k = k + multinom_rand[j]
-    return(rand)
-
-
-def continuous_rand_samples(n, num_bins, np_vector):
+def lime_sample(n, continuous, np_vector, num_bins):
     """
     Generates n random values with distribution provided as input.
 
     Inputs are:
     - Desired number random samples, n.
-    - Desired number of bins for the histogram, num_bins.
-    - The vector of continous values that describe the distribution
-      of the random samples that are to be generated, np_vector.
+    - A boolean value indicating whether the input vector contains
+      continous values (True) or discrete values (False), continuous.
+    - The vector of values that describes the distribution of the
+      random samples that are to be generated, np_vector.
+    - Desired number of bins for the histogram, num_bins. If
+      continuous=True, this value is ignored.
 
-    The domain of values in np_vector is broken down into num_bins
-    buckets, and the frequency of samples for each bin is computed.
-    The frequency determines the number of random samples to be
-    generated for each bucket, and each random sample generated is
-    chosen from a uniform probability distribution with end values
-    equal to those of the corresponding bucket.
+    If continuous, the domain of values in np_vector is broken down
+    into num_bins buckets, and the frequency of samples for each bin
+    is computed. The frequency determines the number of random
+    samples to be generated for each bucket, and each random sample
+    generated is chosen from a uniform probability distribution with
+    end values equal to those of the corresponding bucket.
 
-    Output is the vector tot_samples that contains n random samples
-    with the appropriate distribution.
+    If discrete, the frequencies of each class are computed and used
+    to generate random values with the corresponding multinomial
+    distribution.
+
+    Output is the vector rand that contains n random samples with the
+    appropriate distribution.
     """
 
-    # Normalize data to mean zero and std. dev of one
-    np_vector = preprocessing.scale(np_vector)
+    if continuous:
+        # Normalize data to mean zero and std. dev of one
+        np_vector = preprocessing.scale(np_vector)
 
-    # Compute frequency of instances in each of the num_bins buckets.
-    freqs, h_bins = np.histogramdd(np_vector, bins=num_bins)
-    freqs = freqs/np.sum(freqs)
+        # Compute frequency of instances in each of num_bins buckets.
+        freqs, h_bins = np.histogramdd(np_vector, bins=num_bins)
+        freqs = freqs/np.sum(freqs)
 
-    # h_bins lists the bin edges in the distribution.
-    h_bins = np.asarray(h_bins[0])
-    tot_samples = np.zeros(1)
+        # h_bins lists the bin edges in the distribution.
+        h_bins = np.asarray(h_bins[0])
+        rand = np.zeros(1)
 
-    # samples_bins dictates how many random instances have
-    # to be generated in each bin.
-    samples_bins = np.random.multinomial(n, freqs, 1)
+        # samples_bins dictates how many random instances have
+        # to be generated in each bin.
+        samples_bins = np.random.multinomial(n, freqs, 1)
 
-    # The for loop uses a uniform distribution to generate
-    # the desired number of instances in each bucket of the
-    # distribution.
-    for j in range(0, len(freqs)):
-        samples = np.random.uniform(h_bins[j], h_bins[j+1],
-                                    samples_bins[0][j])
-        tot_samples = np.hstack((tot_samples, samples))
-    tot_samples = tot_samples[1:, ]
-    return(tot_samples)
+        # The for loop uses a uniform distribution to generate
+        # the desired number of instances in each bucket of the
+        # distribution.
+        for j in range(0, len(freqs)):
+            samples = np.random.uniform(h_bins[j], h_bins[j+1],
+                                        samples_bins[0][j])
+            rand = np.hstack((rand, samples))
+        rand = rand[1:, ]
+    else:
+        # Extract the list of unique values in np_vector, and the
+        # frequency of each value.
+        values, freqs = np.unique(np_vector, return_counts=True)
+        freqs = freqs/np.sum(freqs)
+        values = values.astype(float)
+
+        # Normalize values to mean zero and unit variance.
+        values = preprocessing.scale(values)
+
+        # Using a multinomial distribution, determine the number
+        # of instances of each class that are to be generated.
+        multinom_rand = np.random.multinomial(n, freqs, 1)[0]
+
+        # rand will contain the list of instances that are generated
+        # based on the numbers in multinom_rand.
+        rand = np.zeros(n)
+        k = 0
+        for j in range(0, len(values)):
+            rand[k:k+multinom_rand[j]] = values[j]
+            k = k + multinom_rand[j]
+    return(rand)
 
 
 def lime_fit(x, x_class, perturbed_samples, class_perturb_samples):
@@ -153,8 +144,8 @@ data_norm = preprocessing.scale(data_set.data)
 # clf = clf.fit(data_norm, data_set.target)
 
 # Fitting a Naive Bayes model.
-gnb = GaussianNB()
-clf = gnb.fit(data_norm, data_set.target)
+clf = GaussianNB()
+clf = clf.fit(data_norm, data_set.target)
 
 # Now we generate the random samples.
 # Note that because all four attributes are floats (continuous),
@@ -164,7 +155,7 @@ perturbed_samples = np.zeros(n)
 # once for each attribute in the Iris dataset.
 for j in range(0, data_set.data.shape[1]):
     array = data_set.data[:, j]
-    output = continuous_rand_samples(n, num_bins, array)
+    output = lime_sample(n, True, array, num_bins)
     perturbed_samples = np.vstack((perturbed_samples, output))
 perturbed_samples = np.transpose(perturbed_samples[1:, ])
 

@@ -1,5 +1,4 @@
-from codebase.model import getcollegedatasets as gcd
-from codebase.model import cleanandmergecollegedatasets as cmcd
+#from codebase.model import getcollegedatasets as gcd
 
 
 def test_basic_pass():
@@ -21,11 +20,3 @@ def test_getsalariesbyregion():
 	"""
 	salaries = gcd.getsalariesbyregion()
 	assert(1<=salaries.shape[0])
-
-def test_cleanandmergecollegedatasets():
-	"""
-	This is a placeholder to test get most recent cohorts dataset
-	"""
-	formattedjoin = cmcd.cleanandmergecollegedatasets()
-	assert(1<=formattedjoin.shape[0])
-
