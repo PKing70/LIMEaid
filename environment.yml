@@ -1,4 +1,4 @@
-name: Data515-LIME
+name: LIMEaid
 channels:
   - defaults
 dependencies:
