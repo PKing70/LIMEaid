@@ -1,4 +1,4 @@
-from codebase.model import getcollegedatasets as gcd
+from LIMEaid.model import getcollegedatasets as gcd
 import numpy as np
 import pandas as pd
 

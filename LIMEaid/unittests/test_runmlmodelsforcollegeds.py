@@ -1,4 +1,4 @@
-from codebase.controller import fitsklearnmodels as fkm
+from LIMEaid.controller import fitsklearnmodels as fkm
 
 
 def test_multiclasslogisticregression():

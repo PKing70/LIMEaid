@@ -38,7 +38,7 @@ before_script:
 
 # the actual commands to run
 script:
-    - py.test --pyargs codebase --cov-report term-missing --cov=codebase
+    - py.test --pyargs LIMEaid --cov-report term-missing --cov=LIMEaid
 
 # generate a coverage report to send to back to user
 after_success:
