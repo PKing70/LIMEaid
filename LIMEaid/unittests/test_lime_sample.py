@@ -15,10 +15,9 @@ def test_lime_fit():
     # Normalizing Iris attributes.
     data_norm = preprocessing.scale(data_set.data)
 
-    # Generate n random samples with the same probability distribution
-    # as the classifications of the 150 instances in the Iris dataset.
-    # Random samples and original values are normalized for the
-    # comparison.
+    # Generate n random samples with the same probability
+    # distribution as the classifications of the 150 instances in the
+    # Iris dataset.
     output = lime_sample(n, False, data_set.target, 0)
     values = preprocessing.scale(data_set.target.astype(float))
     assert(len(values) == n)
