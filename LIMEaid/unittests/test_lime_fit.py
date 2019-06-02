@@ -1,5 +1,5 @@
-from LIMEaid import lime_sample
-from LIMEaid import lime_fit
+from LIMEaid.LIMEaid import lime_sample
+from LIMEaid.LIMEaid import lime_fit
 import pytest
 
 import numpy as np
