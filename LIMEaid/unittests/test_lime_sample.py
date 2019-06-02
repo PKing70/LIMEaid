@@ -18,6 +18,6 @@ def test_lime_fit():
     # Generate n random samples with the same probability
     # distribution as the classifications of the 150 instances in the
     # Iris dataset.
-    output = lime_sample(n, False, data_set.target, 0)
+    output = la.lime_sample(n, False, data_set.target, 0)
     values = preprocessing.scale(data_set.target.astype(float))
     assert(len(values) == n)
