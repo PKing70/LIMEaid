@@ -1,16 +1,12 @@
 #import sys, os
 #sys.path.append(os.getcwd())
-import os
-
+from LIMEaid.LIMEaid import version
 
 def test_versionpy():
 	"""
 	This is a test for version.py
 	"""
 	# Get version and release info, which is all stored in LIMEaid/version.py
-	ver_file = os.path.join('LIMEaid', 'version.py')
-
-	with open(ver_file) as f:
-		exec(f.read())
+	version
 
 	assert(1==1)
