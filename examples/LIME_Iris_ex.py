@@ -1,7 +1,7 @@
 # import sys, os
 # sys.path.append(os.getcwd())
 import numpy as np
-import LIMEaid as la
+import LIME_aid as la
 from sklearn import preprocessing
 from sklearn import datasets
 from sklearn import tree
