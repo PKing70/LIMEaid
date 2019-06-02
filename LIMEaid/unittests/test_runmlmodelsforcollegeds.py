@@ -1,6 +1,6 @@
-import sys, os
-sys.path.append(os.getcwd())
-from LIMEaid.controller import fitsklearnmodels as fkm
+#import sys, os
+#sys.path.append(os.getcwd())
+from LIMEaid.LIMEaid.controller import fitsklearnmodels as fkm
 
 
 def test_multiclasslogisticregression():
