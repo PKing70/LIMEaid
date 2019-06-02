@@ -1,5 +1,4 @@
-from LIMEaid import lime_sample
-from LIMEaid import lime_fit
+from LIMEaid.LIMEaid.controller import LIMEaid as la
 import pytest
 
 import numpy as np
@@ -31,7 +30,7 @@ def test_lime_fit():
     # once for each attribute in the Iris dataset.
     for j in range(0, data_set.data.shape[1]):
         array = data_set.data[:, j]
-        output = lime_sample(n, True, array, num_bins)
+        output = la.lime_sample(n, True, array, num_bins)
         perturbed_samples = np.vstack((perturbed_samples, output))
     perturbed_samples = np.transpose(perturbed_samples[1:, ])
 
@@ -50,7 +49,7 @@ def test_lime_fit():
     x_class = data_set.target[inst_num]
 
     # Call LIME.
-    lime_beta, lime_int, lime_weigh = lime_fit(x,
+    lime_beta, lime_int, lime_weigh = la.lime_fit(x,
                                                x_class,
                                                perturbed_samples,
                                                class_perturb_samples)
