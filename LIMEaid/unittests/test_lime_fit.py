@@ -49,14 +49,27 @@ def test_lime_fit():
     x_class = data_set.target[inst_num]
 
     # Call LIME.
-    lime_beta, lime_int, lime_weigh = la.lime_fit(x,
-                                               x_class,
-                                               perturbed_samples,
-                                               class_perturb_samples)
+    lime_b, lime_i, lime_w = la.lime_fit(x,
+                                         x_class,
+                                         perturbed_samples,
+                                         class_perturb_samples)
 
     flag = False
-    for j in range(0, len(lime_beta)):
-        if lime_beta[j] != 0:
+    for j in range(0, len(lime_b)):
+        if lime_b[j] != 0:
             flag = True
 
     assert(flag)
+
+
+def test_lime_fit_discrete():
+    # Read Iris dataset
+    data_set = datasets.load_iris()
+    # Number of perturbed samples to be generated.
+    n = 10000
+
+    # Generate n random samples with the same probability
+    # distribution as the classifications of the 150 instances in the
+    # Iris dataset.
+    output = la.lime_sample(n, False, data_set.target, 0)
+    assert(len(output) == n)
