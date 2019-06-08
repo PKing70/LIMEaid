@@ -1,4 +1,6 @@
-from LIMEaid.model import get_college_datasets as gcd
+import sys
+sys.path.insert(0, '../LIMEaid/model')
+import get_college_datasets as gcd
 
 
 def test_basic_pass():

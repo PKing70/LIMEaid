@@ -1,4 +1,6 @@
-from LIMEaid import version
+import sys
+sys.path.insert(0, '../LIMEaid')
+import version
 
 
 def test_versionpy():

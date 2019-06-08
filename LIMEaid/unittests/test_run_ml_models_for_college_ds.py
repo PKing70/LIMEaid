@@ -1,4 +1,6 @@
-from LIMEaid.controller import fit_sklearn_models as fkm
+import sys
+sys.path.insert(0, '../LIMEaid/controller')
+import fit_sklearn_models as fkm
 
 
 def test_multiclass_logistic_regression():
