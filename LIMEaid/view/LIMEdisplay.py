@@ -17,12 +17,18 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
       x_class.
     - A vector containing the names of the attributes in data, features.
 
-    The function's displays the right graph or graphs as output.
+    The function displays the right graph or graphs showing the LIME
+    algorithm's output.
+    OUTPUT IS LIMITED TO SIX CLASSES.
     """
 
+    # Vector of colors that will be assigned to each class in the
+    # output.
     colors = ['k', 'b', 'm', 'c', 'g', 'y']
+    # Identifying the unique classes in the output data.
     classes = np.unique(data[:, -1])
 
+    # Identifying the significant attributes as selected by LIME.
     significant_attributes = 0
     for j in range(0, len(lime_beta)):
         if(lime_beta[j] != 0):
@@ -34,11 +40,9 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
         # For visualization we separate perturbed samples classified
         # by the ML model as in-class, from those classified
         # out-of-class.
-        in_class_data = data[data[:, -1] ==
-                             x_class]
-        out_class_data = data[data[:, -1] !=
-                              x_class]
-
+        in_class_data = data[data[:, -1] ==  x_class]
+        out_class_data = data[data[:, -1] != x_class]
+        # Displaying the output.
         plt.rcParams['figure.figsize'] = [10.0, 10.0]
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
@@ -73,3 +77,4 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
     ax.scatter(x_class, instance, marker='o', c='r')
     ax.set_ylabel('LIME Regression')
     plt.grid(b=True, which='both', color='0.85', linestyle='-')
+    plt.show()
