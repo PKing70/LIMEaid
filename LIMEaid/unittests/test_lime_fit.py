@@ -1,10 +1,9 @@
-from LIMEaid.LIMEaid.controller import LIMEaid as la
-import pytest
-
+import sys
+sys.path.insert(0, '../LIMEaid/controller')
+import LIMEaid as la
 import numpy as np
 from sklearn import datasets
 from sklearn import preprocessing
-from sklearn import linear_model
 from sklearn.naive_bayes import GaussianNB
 
 
