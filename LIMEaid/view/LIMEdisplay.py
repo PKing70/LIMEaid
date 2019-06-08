@@ -12,10 +12,12 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
     - A numpy array containing the coefficients of the linear model
       fitted by LIME, lime_beta
     - The intercept of the linear model fitted by LIME, lime_int.
-    - The attribute values for the feature we are looking to explain, x.
+    - The attribute values for the feature we are looking to
+      explain, x.
     - The class assigned to the instance we are looking to explain,
       x_class.
-    - A vector containing the names of the attributes in data, features.
+    - A vector containing the names of the attributes in data,
+      features.
 
     The function displays the right graph or graphs showing the LIME
     algorithm's output.
