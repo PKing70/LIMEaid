@@ -54,8 +54,9 @@ def clean_and_merge_college_datasets():
 
     # Keep only the required columns in the final dataframe
     columns_to_keep = ['SalaryClass', 'HCM2', 'SATVR25', 'SATVR75', 'SATMT25',
-                       'SATMT75', 'SATWR25', 'SATWR75', 'ACTCM25', 'ACTCM75', 'ACTEN25',
-                       'ACTEN75', 'ACTMT25', 'ACTMT75', 'ACTWR25', 'ACTWR75', 'PCIP01']
+                       'SATMT75', 'SATWR25', 'SATWR75', 'ACTCM25', 'ACTCM75',
+                       'ACTEN25','ACTEN75', 'ACTMT25', 'ACTMT75', 'ACTWR25',
+                       'ACTWR75', 'PCIP01']
 
     final_df = formatted_join[columns_to_keep]
 
