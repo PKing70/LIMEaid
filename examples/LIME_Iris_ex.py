@@ -1,12 +1,17 @@
-# import sys, os
-# sys.path.append(os.getcwd())
+import sys
+sys.path.insert(0, '../LIMEaid/controller')
+sys.path.insert(0, '../LIMEaid/model')
+sys.path.insert(0, '../LIMEaid/view')
 import numpy as np
-from LIMEaid.controller import LIMEaid as la
-# from LIMEaid.LIMEaid.controller import LIMEaid as la
+import LIMEaid as la
+import LIMEdisplay as ld
+import load_college_dataset as gcd
+import fit_sklearn_models as fsm
 from sklearn import preprocessing
 from sklearn import datasets
 from sklearn import tree
 from sklearn.naive_bayes import GaussianNB
+
 
 #####################################################################
 # This example uses the functions in the LIMEaid.py package to
@@ -80,3 +85,7 @@ for j in range(0, len(lime_beta)):
         print("Feature: ", data_set.feature_names[j],
               "\tCoefficient: ", lime_beta[j])
 print("Intercept: ", lime_int)
+
+full_data = np.column_stack((perturbed_samples, class_perturb_samples))
+ld.lime_display(full_data, lime_beta, lime_int, x, x_class,
+                data_set.feature_names)
