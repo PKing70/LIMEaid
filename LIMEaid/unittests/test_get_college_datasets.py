@@ -1,4 +1,4 @@
-from LIMEaid.LIMEaid.model import get_college_datasets as gcd
+from LIMEaid.model import get_college_datasets as gcd
 
 
 def test_basic_pass():

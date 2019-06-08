@@ -1,4 +1,4 @@
-from LIMEaid.LIMEaid import version
+from LIMEaid import version
 
 
 def test_versionpy():
