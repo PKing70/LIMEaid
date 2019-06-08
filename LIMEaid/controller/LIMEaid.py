@@ -37,7 +37,7 @@ def lime_sample(n, continuous, np_vector, num_bins):
 
         # Compute frequency of instances in each of num_bins buckets.
         freqs, h_bins = np.histogramdd(np_vector, bins=num_bins)
-        freqs = freqs/np.sum(freqs)
+        freqs = freqs / np.sum(freqs)
 
         # h_bins lists the bin edges in the distribution.
         h_bins = np.asarray(h_bins[0])
@@ -51,7 +51,7 @@ def lime_sample(n, continuous, np_vector, num_bins):
         # the desired number of instances in each bucket of the
         # distribution.
         for j in range(0, len(freqs)):
-            samples = np.random.uniform(h_bins[j], h_bins[j+1],
+            samples = np.random.uniform(h_bins[j], h_bins[j + 1],
                                         samples_bins[0][j])
             rand = np.hstack((rand, samples))
         rand = rand[1:, ]
@@ -59,7 +59,7 @@ def lime_sample(n, continuous, np_vector, num_bins):
         # Extract the list of unique values in np_vector, and the
         # frequency of each value.
         values, freqs = np.unique(np_vector, return_counts=True)
-        freqs = freqs/np.sum(freqs)
+        freqs = freqs / np.sum(freqs)
         values = values.astype(float)
 
         # Normalize values to mean zero and unit variance.
@@ -74,7 +74,7 @@ def lime_sample(n, continuous, np_vector, num_bins):
         rand = np.zeros(n)
         k = 0
         for j in range(0, len(values)):
-            rand[k:k+multinom_rand[j]] = values[j]
+            rand[k:k + multinom_rand[j]] = values[j]
             k = k + multinom_rand[j]
     return(rand)
 
@@ -102,7 +102,7 @@ def lime_fit(x, x_class, perturbed_samples, class_perturb_samples):
 
     # Compute LIME weights.
     sigma = np.var(np.sum((perturbed_samples - x)**2, axis=1))
-    l_weights = np.exp(-np.sum((perturbed_samples - x)**2, axis=1) /
+    l_weights = np.exp( - np.sum((perturbed_samples - x)**2, axis=1) /
                        sigma)
 
     # We identify the correct class for the instance we wish to
