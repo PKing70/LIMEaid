@@ -40,7 +40,7 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
         # For visualization we separate perturbed samples classified
         # by the ML model as in-class, from those classified
         # out-of-class.
-        in_class_data = data[data[:, -1] ==  x_class]
+        in_class_data = data[data[:, -1] == x_class]
         out_class_data = data[data[:, -1] != x_class]
         # Displaying the output.
         plt.rcParams['figure.figsize'] = [10.0, 10.0]
