@@ -1,6 +1,5 @@
-#import sys, os
-#sys.path.append(os.getcwd())
 from LIMEaid.LIMEaid import version
+
 
 def test_versionpy():
 	"""

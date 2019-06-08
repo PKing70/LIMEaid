@@ -1,5 +1,4 @@
 from LIMEaid.LIMEaid.model import get_college_datasets as gcd
-import numpy as np
 import pandas as pd
 
 
@@ -36,11 +35,11 @@ def clean_and_merge_college_datasets():
     # Create new column SalaryClass to make the Salary ranges into classes
     salaries['SalaryClass'] = 100
     salaries.loc[salaries['Salary'].between(0, 75, inclusive=False),
-     'SalaryClass'] = 0
+                 'SalaryClass'] = 0
     salaries.loc[salaries['Salary'].between(75, 90, inclusive=True),
-     'SalaryClass'] = 1
+                 'SalaryClass'] = 1
     salaries.loc[salaries['Salary'].between(90, 500, inclusive=False),
-     'SalaryClass'] = 2
+                 'SalaryClass'] = 2
 
     # Delete rows with SalaryClass 100
     rows_to_drop = salaries[salaries['SalaryClass'] == 100].index
@@ -48,15 +47,15 @@ def clean_and_merge_college_datasets():
 
     # rename the join column on the scorecard dataset
     scorecard.rename(columns={'School Name': 'Formatted School Name'},
-     inplace=True)
+                     inplace=True)
 
     formatted_join = \
         pd.merge(salaries, scorecard, on='Formatted School Name', how='inner')
 
     # Keep only the required columns in the final dataframe
     columns_to_keep = ['SalaryClass', 'HCM2', 'SATVR25', 'SATVR75', 'SATMT25',
-     'SATMT75', 'SATWR25', 'SATWR75', 'ACTCM25', 'ACTCM75', 'ACTEN25',
-     'ACTEN75', 'ACTMT25', 'ACTMT75', 'ACTWR25', 'ACTWR75', 'PCIP01']
+                       'SATMT75', 'SATWR25', 'SATWR75', 'ACTCM25', 'ACTCM75', 'ACTEN25',
+                       'ACTEN75', 'ACTMT25', 'ACTMT75', 'ACTWR25', 'ACTWR75', 'PCIP01']
 
     final_df = formatted_join[columns_to_keep]
 
