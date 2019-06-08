@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '../LIMEaid')
+sys.path.insert(0, '../controller')
 import version
 
 
