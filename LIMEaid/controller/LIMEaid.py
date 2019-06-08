@@ -102,8 +102,8 @@ def lime_fit(x, x_class, perturbed_samples, class_perturb_samples):
 
     # Compute LIME weights.
     sigma = np.var(np.sum((perturbed_samples - x)**2, axis=1))
-    l_weights = np.exp( - np.sum((perturbed_samples - x)**2, axis=1) /
-                       sigma)
+    l_weights = np.exp(- np.sum((perturbed_samples - x)**2,
+                                axis=1) / sigma)
 
     # We identify the correct class for the instance we wish to
     # interpret, make that class one and all others become
