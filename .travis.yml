@@ -34,7 +34,7 @@ install:
 
 # a list of commands to run before the main script
 before_script:
-    - flake8 LIMEaid
+    - flake8 LIMEaid --ignore=E402
 
 # the actual commands to run
 script:
