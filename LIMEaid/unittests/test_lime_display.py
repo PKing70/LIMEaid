@@ -14,8 +14,10 @@ def test_lime_display():
     x = [1.5, 1.5, 1.5]
     x_class = 0
     features = ["A", "B", "C"]
+    # Plot dummy data. If plot throws an error, test fails.
     try:
-        ld.lime_display(data, lime_beta, lime_int, x, x_class, features)
+        ld.lime_display(data, lime_beta, lime_int, x, x_class,
+                        features)
         assert(True)
     except:
         assert(False)
