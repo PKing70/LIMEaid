@@ -1,26 +1,25 @@
-import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
-
-"""
-Displays results from the lime_fit() function.
-
-Inputs are:
-- A numpy array containing the random samples for which LIME fit
-  the linear model, data.
-- A numpy array containing the coefficients of the linear model
-  fitted by LIME, lime_beta
-- The intercept of the linear model fitted by LIME, lime_int.
-- The attribute values for the feature we are looking to explain, x.
-- The class assigned to the instance we are looking to explain,
-  x_class.
-- A vector containing the names of the attributes in data, features.
-
-The function's displays the right graph or graphs as output.
-"""
+import numpy as np
 
 
 def lime_display(data, lime_beta, lime_int, x, x_class, features):
+    """
+    Displays results from the lime_fit() function.
+
+    Inputs are:
+    - A numpy array containing the random samples for which LIME fit
+      the linear model, data.
+    - A numpy array containing the coefficients of the linear model
+      fitted by LIME, lime_beta
+    - The intercept of the linear model fitted by LIME, lime_int.
+    - The attribute values for the feature we are looking to explain, x.
+    - The class assigned to the instance we are looking to explain,
+      x_class.
+    - A vector containing the names of the attributes in data, features.
+
+    The function's displays the right graph or graphs as output.
+    """
+
     colors = ['k', 'b', 'm', 'c', 'g', 'y']
     classes = np.unique(data[:, -1])
 
@@ -72,7 +71,5 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
                    marker='o', c=colors[j])
     instance = sum(x * lime_beta) + lime_int
     ax.scatter(x_class, instance, marker='o', c='r')
-    ticksx = ax.set_xticks([0, 1, 2])
-    labelsx = ax.set_xticklabels(['0', '1', '2'])
     ax.set_ylabel('LIME Regression')
     plt.grid(b=True, which='both', color='0.85', linestyle='-')
