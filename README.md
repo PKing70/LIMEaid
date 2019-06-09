@@ -33,9 +33,10 @@ The LIMEaid team has authored their own version of LIME.
 
 #### Python packages needed
 
+- [graphviz](http://graphviz.org/)
+- [matplotlib](https://matplotlib.org/)
 - [NumPy](https://www.numpy.org)
 - [sklearn](https://scikit-learn.org)
-- [matplotlib](https://matplotlib.org/)
 
 #### License Information
 
@@ -45,7 +46,7 @@ The MIT License is a permissive free software license originating at the Massach
 
 LIMEaid is organized as follows:
 
-```
+<pre>
 
 LIMEaid (master)
 |     .coveragerc
@@ -99,3 +100,4 @@ LIMEaid (master)
 |     |----- view
 |     |      |    __init__.py
 |     |      |   LIMEdisplay.py
+</pre>
