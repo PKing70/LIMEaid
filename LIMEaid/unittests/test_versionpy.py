@@ -1,6 +1,4 @@
-import sys
-sys.path.insert(0, '../controller')
-import version
+from LIMEaid.LIMEaid import version
 
 
 def test_versionpy():

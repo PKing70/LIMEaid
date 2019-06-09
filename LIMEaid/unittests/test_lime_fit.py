@@ -1,6 +1,4 @@
-import sys
-sys.path.insert(0, '../controller')
-import LIMEaid as la
+from LIMEaid.LIMEaid.controller import LIMEaid as la
 import numpy as np
 from sklearn import datasets
 from sklearn import preprocessing

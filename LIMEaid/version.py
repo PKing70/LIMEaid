@@ -26,7 +26,7 @@ CLASSIFIERS = ["Development Status :: 3 - Alpha",
                "Topic :: Scientific/Engineering"]
 
 # Description should be a one-liner:
-description = "LIMEaid: a tabular version of LIME"
+description = "LIMEaid is a tabular version of LIME"
 # Long description will go up on the pypi page
 long_description = """
 LIMEaid
@@ -41,20 +41,21 @@ License
 "LICENSE" for information on the history of this software, terms & conditions
 for usage, and a DISCLAIMER OF ALL WARRANTIES.
 All trademarks referenced herein are property of their respective holders.
-Copyright (c) 2015--, Ariel Rokem, The University of Washington
+Copyright (c) 2019--, Suman Bhagavathula, Javier Salido, Patrick King,
+The University of Washington
 eScience Institute.
 """
 
 NAME = "LIMEaid"
-MAINTAINER = "Suman Bhagavathula, Javier Salido, Patrick King"
+MAINTAINER = "sumanbh@uw.edu;javiers@uw.edu;pking70@uw.edu"
 MAINTAINER_EMAIL = "sumanbh@uw.edu"
 DESCRIPTION = description
 LONG_DESCRIPTION = long_description
 URL = "http://github.com/pking70/LIMEaid"
 DOWNLOAD_URL = ""
 LICENSE = "MIT"
-AUTHOR = "Ariel Rokem"
-AUTHOR_EMAIL = "Suman Bhagavathula, Javier Salido, Patrick King"
+AUTHOR = "sumanbh@uw.edu;javiers@uw.edu;pking70@uw.edu"
+AUTHOR_EMAIL = "sumanbh@uw.edu"
 PLATFORMS = "OS Independent"
 MAJOR = _version_major
 MINOR = _version_minor
