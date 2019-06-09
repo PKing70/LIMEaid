@@ -41,7 +41,8 @@ License
 "LICENSE" for information on the history of this software, terms & conditions
 for usage, and a DISCLAIMER OF ALL WARRANTIES.
 All trademarks referenced herein are property of their respective holders.
-Copyright (c) 2019--, Suman Bhagavathula, Javier Salido, Patrick King, The University of Washington
+Copyright (c) 2019--, Suman Bhagavathula, Javier Salido, Patrick King,
+The University of Washington
 eScience Institute.
 """
 
