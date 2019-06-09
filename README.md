@@ -35,6 +35,7 @@ The LIMEaid team has authored their own version of LIME.
 
 - [NumPy](https://www.numpy.org)
 - [sklearn](https://scikit-learn.org)
+- [matplotlib](https://matplotlib.org/)
 
 #### License Information
 
