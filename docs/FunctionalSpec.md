@@ -1,4 +1,4 @@
-# Data 515 LIME
+# Data 515 LIMEaid
 
 Spring 2019
 
@@ -38,22 +38,21 @@ For our implementation, the user is specifically interested in evaluating a data
 
 For this project the following datasets will be used.
 
-
 #### Salaries by college
 
-Data sourced from the Wall Street Journal has been used on Kaggle to analyze Salaries by college, region, and academic major. (https://www.kaggle.com/wsj/college-salaries). The data is released under (CC0 Public Domain license)[https://creativecommons.org/publicdomain/zero/1.0/].
+Data sourced from the Wall Street Journal has been used on Kaggle to analyze Salaries by college, region, and academic major. (https://www.kaggle.com/wsj/college-salaries). The data is released under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
 
-Additional, related data containing more potentially meaningful variables has been compiled and shared (here)[https://www.kaggle.com/smithashivakumar/college] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
+Additional, related data containing more potentially meaningful variables has been compiled and shared (here) [https://www.kaggle.com/smithashivakumar/college] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
 
 #### College Scorecard
 
-The United States Department of Education has shared the raw data from its (College Scorecard page)[https://collegescorecard.ed.gov/data/] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/]. This data includes annual rating data from years 2017-1996 and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
+The United States Department of Education has shared the raw data from its (College Scorecard page) [https://collegescorecard.ed.gov/data/] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/]. This data includes annual rating data from years 2017-1996 and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
 
 ## Use cases
 
 ### Case 1: Model verification
 
-After training competing ML models, data scientist will input a set of predictors and their corresponding output variable into our LIME function. In response, our function will deliver a ranking of which predictors have been determined to be the most relevant to this local output of each model, in such a way that the scientist can intuit whether expected or reasonable predictors are being used. For example, if the output was that the given message was spam, LIME should produce the specific weighted list/rank of the words the model used to make such a determination. 
+After training competing ML models, data scientist will input a set of predictors and their corresponding output variable into our LIME function. In response, our function will deliver a ranking of which predictors have been determined to be the most relevant to this local output of each model, in such a way that the scientist can intuit whether expected or reasonable predictors are being used. For example, if the output was that the given message was spam, LIME should produce the specific weighted list/rank of the words the model used to make such a determination.
 
 #### Scenario
 
