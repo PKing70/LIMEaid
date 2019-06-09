@@ -40,13 +40,13 @@ For this project the following datasets will be used.
 
 #### Salaries by college
 
-Data sourced from the Wall Street Journal has been used on Kaggle to analyze Salaries by college, region, and academic major. (https://www.kaggle.com/wsj/college-salaries). The data is released under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
+Data sourced from the Wall Street Journal has been used on Kaggle to analyze [Salaries](https://www.kaggle.com/wsj/college-salaries) by college, region, and academic major. The data is released under [CC0 Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/).
 
-Additional, related data containing more potentially meaningful variables has been compiled and shared (here) [https://www.kaggle.com/smithashivakumar/college] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/].
+Additional, related data containing more potentially meaningful variables has been compiled and shared [here](https://www.kaggle.com/smithashivakumar/college) under [CC0 Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/).
 
 #### College Scorecard
 
-The United States Department of Education has shared the raw data from its (College Scorecard page) [https://collegescorecard.ed.gov/data/] under (CC0 Public Domain license) [https://creativecommons.org/publicdomain/zero/1.0/]. This data includes annual rating data from years 2017-1996 and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
+The United States Department of Education has shared the raw data from its [College Scorecard page](https://collegescorecard.ed.gov/data/) under [CC0 Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/). This data includes annual rating data from years 2017-1996 and includes additional features not available in the Kaggle sets, such as demographic data about cohorts, race and gender statistics of students, and more.
 
 ## Use cases
 
