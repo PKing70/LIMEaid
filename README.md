@@ -11,9 +11,11 @@ The LIMEaid team has authored their own version of LIME.
 
 ## Team Members
 
-#### Suman Bhagavathula
-#### Patrick King
-#### Javier Salido
+### Suman Bhagavathula
+
+### Patrick King
+
+### Javier Salido
 
 ## Data
 
@@ -25,22 +27,26 @@ The LIMEaid team has authored their own version of LIME.
 
 ## Software dependencies and license information
 
-#### Programming language: 
+### Programming language
 
-- Python version 3.6 and above 
+- Python version 3.6 and above
 
-#### Python packages needed:
+#### Python packages needed
 
 - [NumPy](https://www.numpy.org)
 - [sklearn](https://scikit-learn.org)
+- [matplotlib](https://matplotlib.org/)
 
-#### License Information:
+#### License Information
+
 The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [LICENSE](https://github.com/PKing70/LIMEaid/blob/master/LICENSE).
 
 ## Directory Structure
 
 LIMEaid is organized as follows:
+
 ```
+
 LIMEaid (master)
 |     .coveragerc
 |     .gitignore
@@ -59,10 +65,10 @@ LIMEaid (master)
 |
 |----- examples
 |     |      __init__.py
-|     |      LIMEaidSchool.ipynb
-|     |      LIMEaidIris.ipynb
-|     |      LIMEclassicSchool.ipynb
-|     |      LIMEclassicIris.ipynb
+|     |      LIME_Education_ex.py
+|     |      LIME_Iris_ex.py
+|     |      LIME_Education_ex_notebook.ipynb
+|     |      LIME_Iris_ex_notebook.ipynb
 |
 |----- LIMEaid
 |     |      __init__.py
@@ -71,18 +77,25 @@ LIMEaid (master)
 |     |----- controller
 |     |      |   __init__.py
 |     |      |   LIMEaid.py
-|     |      |   fitsklearnmodels.py
-|     | 
+|     |      |   fit_sklearn_models.py
+|     |
 |     |----- data
-|     |      |   Most-_Recent-_Cohorts-_Scorecard-_Elements.csv	
+|     |      |   Most-_Recent-_Cohorts-_Scorecard-_Elements.csv
 |     |      |   salaries-by-region.csv
-|     | 
+|     |
 |     |----- model
-|     |      |    __init__.py
-|     |      |    getcollegedatasets.py
-|     |      |    loadcollegedatasets.py
-|     |            
+|     |      |   __init__.py
+|     |      |   get_college_datasets.py
+|     |      |   load_college_dataset.py
+|     |
 |     |----- unittests
+|     |      |   __init__.py
+|     |      |   test_get_college_datasets.py
+|     |      |   test_run_ml_models_for_college_ds.py
+|     |      |   test_lime_fit.py
+|     |      |   test_lime_display.py
+|     |      |   test_versionpy.py
+|     |
+|     |----- view
 |     |      |    __init__.py
-|     |      |    test_getcollegedatasets.py
-|     |      |    test_runmlmodelsforcollegeds.py
+|     |      |   LIMEdisplay.py
