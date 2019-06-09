@@ -1,4 +1,4 @@
-import get_college_datasets as gcd
+from LIMEaid.LIMEaid.model import get_college_datasets as gcd
 import pandas as pd
 
 
