@@ -46,7 +46,7 @@ eScience Institute.
 """
 
 NAME = "LIMEaid"
-MAINTAINER = "Suman Bhagavathula, Javier Salido, Patrick King"
+MAINTAINER = "sumanbh@uw.edu;javiers@uw.edu;pking70@uw.edu"
 MAINTAINER_EMAIL = "sumanbh@uw.edu;javiers@uw.edu;pking70@uw.edu"
 DESCRIPTION = description
 LONG_DESCRIPTION = long_description
