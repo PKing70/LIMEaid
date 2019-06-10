@@ -1,6 +1,5 @@
-import os
 import sys
-sys.path.insert(0,'../LIMEaid/LIMEaid')
+sys.path.insert(0, '../LIMEaid/LIMEaid')
 from model import get_college_datasets as gcd
 
 

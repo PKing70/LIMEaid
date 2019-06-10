@@ -1,6 +1,5 @@
-import os
 import sys
-sys.path.insert(0,'../LIMEaid/LIMEaid')
+sys.path.insert(0, '../LIMEaid/LIMEaid')
 from controller import fit_sklearn_models as fkm
 
 
