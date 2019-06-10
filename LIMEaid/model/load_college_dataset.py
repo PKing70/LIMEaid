@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, '../LIMEaid/LIMEaid')
-from model import get_college_datasets as gcd
+import get_college_datasets as gcd
 import pandas as pd
 
 
