@@ -88,4 +88,4 @@ print("Intercept: ", lime_int)
 
 full_data = np.column_stack((perturbed_samples, class_perturb_samples))
 ld.lime_display(full_data, lime_beta, lime_int, x, x_class,
-                data_set.feature_names)
+                data_set.feature_names, data_set.target_names)
