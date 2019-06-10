@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def lime_display(data, lime_beta, lime_int, x, x_class, features):
+def lime_display(data, lime_beta, lime_int, x, x_class, features,
+                 class_names):
     """
     Displays results from the lime_fit() function.
 
@@ -77,6 +78,10 @@ def lime_display(data, lime_beta, lime_int, x, x_class, features):
                    marker='o', c=colors[j])
     instance = sum(x * lime_beta) + lime_int
     ax.scatter(x_class, instance, marker='o', c='r')
+    ax.set_title("Regression values per class.")
+    ax.xaxis.set_ticks(np.arange(len(class_names)))
+    ax.xaxis.set_ticklabels(class_names)
+    ax.set_xlabel('Class')
     ax.set_ylabel('LIME Regression')
     plt.grid(b=True, which='both', color='0.85', linestyle='-')
     plt.show()
