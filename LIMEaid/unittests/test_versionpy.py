@@ -12,4 +12,3 @@ def test_versionpy():
     print('Testing now...')
 
     assert(1 == 1)
-
