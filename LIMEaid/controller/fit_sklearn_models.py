@@ -1,4 +1,7 @@
-from LIMEaid.LIMEaid.model import load_college_dataset as lcd
+import os
+import sys
+sys.path.insert(0,'../LIMEaid/LIMEaid')
+from model import load_college_dataset as lcd
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegressionCV
