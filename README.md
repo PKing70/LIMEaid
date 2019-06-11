@@ -152,4 +152,4 @@ LIMEaid (master)
 
 * [Patrick King](mailto:pking70@uw.edu)
 
-* [Javier Salido](mailto:javiers@uw.edu)
+* [Francisco Javier Salido Magos](mailto:javiers@uw.edu)
