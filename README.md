@@ -38,6 +38,12 @@ The LIMEaid team has authored their own version of LIME.
 - [NumPy](https://www.numpy.org)
 - [sklearn](https://scikit-learn.org)
 
+#### Examples
+
+Please note that the .py examples have to be run from the top level LIMEaid directory:
+
+../LIMEaid > python .\examples\LIME_Education_ex.py
+
 #### License Information
 
 The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [LICENSE](https://github.com/PKing70/LIMEaid/blob/master/LICENSE).
