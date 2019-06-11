@@ -46,58 +46,64 @@ The MIT License is a permissive free software license originating at the Massach
 
 LIMEaid is organized as follows:
 
-<pre>
+```bash
 
 LIMEaid (master)
 |     .coveragerc
 |     .gitignore
 |     .travis.yml
-|     LICENSE
-|     README.md
 |     __init__.py
 |     environment.yml
+|     LICENSE
+|     README.md
+|     requirements.txt
 |     setup.py
 |
 |----- docs
 |     |      ComponentSpec.ipynb
+|     |      Data515TechReview.pptx
 |     |      FunctionalSpec.md
-|     |      LIMEaidTechReview.pdf
 |     |      LIMEaidFinal.pdf
+|     |      LIMEaidFinal.pptx
+|     |
+|     |----- images
+|     |     |     Components.png
+|     |     |     Limeaid.png
 |
 |----- examples
-|     |      __init__.py
-|     |      LIME_Education_ex.py
-|     |      LIME_Iris_ex.py
-|     |      LIME_Education_ex_notebook.ipynb
-|     |      LIME_Iris_ex_notebook.ipynb
+|     |     __init__.py
+|     |     LIME_Education_ex.py
+|     |     LIME_Education_ex_notebook.ipynb
+|     |     LIME_Iris_ex.py
+|     |     LIME_Iris_ex_notebook.ipynb
 |
 |----- LIMEaid
-|     |      __init__.py
-|     |      version.py
+|     |     __init__.py
+|     |     version.py
 |     |  
 |     |----- controller
-|     |      |   __init__.py
-|     |      |   LIMEaid.py
-|     |      |   fit_sklearn_models.py
+|     |     |     __init__.py
+|     |     |     fit_sklearn_models.py
+|     |     |     LIMEaid.py
 |     |
 |     |----- data
-|     |      |   Most-_Recent-_Cohorts-_Scorecard-_Elements.csv
-|     |      |   salaries-by-region.csv
+|     |     |     Most-_Recent-_Cohorts-_Scorecard-_Elements.csv
+|     |     |     salaries-by-region.csv
 |     |
 |     |----- model
-|     |      |   __init__.py
-|     |      |   get_college_datasets.py
-|     |      |   load_college_dataset.py
+|     |     |     __init__.py
+|     |     |     get_college_datasets.py
+|     |     |     load_college_dataset.py
 |     |
 |     |----- unittests
-|     |      |   __init__.py
-|     |      |   test_get_college_datasets.py
-|     |      |   test_run_ml_models_for_college_ds.py
-|     |      |   test_lime_fit.py
-|     |      |   test_lime_display.py
-|     |      |   test_versionpy.py
+|     |     |     __init__.py
+|     |     |     test_get_college_datasets.py
+|     |     |     test_lime_display.py
+|     |     |     test_lime_fit.py
+|     |     |     test_run_ml_models_for_college_ds.py
+|     |     |     test_versionpy.py
 |     |
 |     |----- view
-|     |      |    __init__.py
-|     |      |   LIMEdisplay.py
-</pre>
+|     |     |     __init__.py
+|     |     |     LIMEdisplay.py
+```
