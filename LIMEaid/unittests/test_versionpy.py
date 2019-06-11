@@ -1,4 +1,6 @@
-from LIMEaid.LIMEaid import version
+import sys
+sys.path.insert(0, '../LIMEaid/LIMEaid')
+import version
 
 
 def test_versionpy():
@@ -7,5 +9,6 @@ def test_versionpy():
     """
     # Get version and release info, which is all stored in LIMEaid/version.py
     version
+    print('Testing now...')
 
     assert(1 == 1)

@@ -1,4 +1,6 @@
-from LIMEaid.LIMEaid.view import LIMEdisplay as ld
+import sys
+sys.path.insert(0, '../LIMEaid/LIMEaid')
+from view import LIMEdisplay as ld
 import numpy as np
 
 
