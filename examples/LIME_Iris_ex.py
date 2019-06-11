@@ -2,11 +2,11 @@ import sys
 sys.path.insert(0, '../LIMEaid/controller')
 sys.path.insert(0, '../LIMEaid/model')
 sys.path.insert(0, '../LIMEaid/view')
-import numpy as np
+import fit_sklearn_models as fsm
 import LIMEaid as la
 import LIMEdisplay as ld
 import load_college_dataset as gcd
-import fit_sklearn_models as fsm
+import numpy as np
 from sklearn import preprocessing
 from sklearn import datasets
 from sklearn import tree
