@@ -16,4 +16,5 @@ def test_lime_display():
     features = ["A", "B", "C"]
     class_names = ["ClassA", "ClassB"]
     # Plot dummy data. If plot throws an error, test fails.
-    ld.lime_display(data, lime_beta, lime_int, x, x_class, features)
+    ld.lime_display(data, lime_beta, lime_int, x, x_class, features,
+                    class_names)
