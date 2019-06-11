@@ -1,7 +1,7 @@
 import sys
-sys.path.insert(0, '../LIMEaid/controller')
-sys.path.insert(0, '../LIMEaid/model')
-sys.path.insert(0, '../LIMEaid/view')
+sys.path.insert(0, '../LIMEaid/LIMEaid/controller')
+sys.path.insert(0, '../LIMEaid/LIMEaid/model')
+sys.path.insert(0, '../LIMEaid/LIMEaid/view')
 import fit_sklearn_models as fsm
 import LIMEaid as la
 import LIMEdisplay as ld
