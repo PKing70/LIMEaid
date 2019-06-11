@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0, '../LIMEaid/LIMEaid')
-from view import LIMEdisplay as ld
 import numpy as np
+from view import LIMEdisplay as ld
 
 
 def test_lime_display():
