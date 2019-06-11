@@ -3,19 +3,53 @@
 
 # LIMEaid
 
-## Implementation of LIME for Tabular Classification Data
+LIMEaid is an implementation of Local Interpretable Model-agnostic Interpretations (LIME) to help explain what machine learning classifier models are doing. LIMEaid supports explaining individual predictions for classifiers of data in tables (numpy arrays of numerical or categorical data), with a package called limeaid.
 
-Local Interpretable Model-agnostic Interpretations (LIME) is a tool.
+LIMEaid is based on and inspired by Marco Tulio Ribeiro's LIME work presented in [this paper](https://arxiv.org/abs/1602.04938), with his code made available [here.](https://github.com/marcotcr/lime)
 
-The LIMEaid team has authored their own version of LIME.
+Limeaid helps explain any black box classifier (from an sklearn classifier method), with two or more classes.
 
-## Team Members
+For additional documentation of LIMEaid, see:
 
-### Suman Bhagavathula
+* [LIMEaid component specification](docs/ComponentSpec.ipynb)
+* [LIMEaid functional specification](docs/FunctionalSpec.md)
+* [LIMEaid project presentation](docs/LIMEaid_Final.pdf)
 
-### Patrick King
+## Install
 
-### Javier Salido
+The lime package is on [PyPI](https://pypi.org/project/LIMEaid/). Simply run:
+
+```sh
+pip install limeaid
+```
+
+Or clone this repository, then run:
+
+```sh
+python setup.py install
+```
+
+## How to use
+
+For tutorials in using LIMEaid with our provided dataset, which merges and classifies a prediction of mean, mid-career salary expectation (low, medium or high) based on where one graduated from college, see:
+
+* [LIMEaid Educaton example code](examples/LIME_Education_ex.py)
+* [LIMEaid Education notebook](examples/LIME_Education_ex_notebook.ipynb)
+
+LIMEaid functions with other (tabular, numeric) datasources too. For a tutorial using the standard Iris dataset provided with scikit-learn, see:
+
+* [LIMEaid Iris example code](examples/LIME_Iris_ex.py)
+* [LIMEaid Iris notebook](examples/LIME_Iris_ex_notebook.ipynb)
+
+__Important:__ 
+
+* The Jupyter notebooks examples above _require_ the LIMEaid PyPI to be installed to run.
+
+* The .py examples must be run from the top level LIMEaid directory:
+
+```sh
+../LIMEaid > python .\examples\LIME_Education_ex.py
+```
 
 ## Data
 
@@ -29,7 +63,7 @@ The LIMEaid team has authored their own version of LIME.
 
 ### Programming language
 
-- Python version 3.6 and above
+- [Python](https://www.python.org/downloads/) version 3.6 or above
 
 #### Python packages needed
 
@@ -38,21 +72,15 @@ The LIMEaid team has authored their own version of LIME.
 - [NumPy](https://www.numpy.org)
 - [scikit-learn](https://scikit-learn.org)
 
-#### Examples
-
-Please note that the .py examples have to be run from the top level LIMEaid directory:
-
-../LIMEaid > python .\examples\LIME_Education_ex.py
-
-#### License Information
+#### License information
 
 The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [LICENSE](https://github.com/PKing70/LIMEaid/blob/master/LICENSE).
 
-## Directory Structure
+## Directory structure
 
 LIMEaid is organized as follows:
 
-```bash
+```sh
 
 LIMEaid (master)
 |     .coveragerc
@@ -113,3 +141,12 @@ LIMEaid (master)
 |     |     |     __init__.py
 |     |     |     LIMEdisplay.py
 ```
+
+## Team members
+
+* [Suman Bhagavathula](mailto:sumanbh@uw.edu)
+
+* [Patrick King](mailto:pking70@uw.edu)
+
+* [Javier Salido](mailto:javiers@uw.edu)[![Build Status](https://travis-ci.org/PKing70/LIMEaid.svg?branch=master)](https://travis-ci.org/PKing70/LIMEaid)
+[![Coverage Status](https://coveralls.io/repos/github/PKing70/LIMEaid/badge.svg?branch=master)](https://coveralls.io/github/PKing70/LIMEaid?branch=master)
