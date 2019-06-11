@@ -23,7 +23,7 @@ The lime package is on [PyPI](https://pypi.org/project/LIMEaid/). Simply run:
 pip install limeaid
 ```
 
-Or clone this repository, then run:
+Or [clone](https://help.github.com/en/articles/cloning-a-repository) this repository, then run:
 
 ```sh
 python setup.py install
