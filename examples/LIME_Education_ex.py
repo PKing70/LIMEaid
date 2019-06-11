@@ -117,4 +117,5 @@ print("Intercept: ", lime_int)
 # can be differentiated using this model only.
 full_data = np.column_stack((perturbed_samples,
                              class_perturb_samples))
-ld.lime_display(full_data, lime_beta, lime_int, x, x_class, features)
+ld.lime_display(full_data, lime_beta, lime_int, x, x_class, features,
+                [1, 2, 3])
