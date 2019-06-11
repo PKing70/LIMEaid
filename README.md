@@ -7,7 +7,7 @@ LIMEaid is an implementation of Local Interpretable Model-agnostic Interpretatio
 
 LIMEaid is based on and inspired by Marco Tulio Ribeiro's LIME work presented in [this paper](https://arxiv.org/abs/1602.04938), with his code made available [here.](https://github.com/marcotcr/lime)
 
-Limeaid helps explain any black box classifier (from an sklearn classifier method), with two or more classes.
+LIMEaid helps explain any black box classifier (from an sklearn classifier method), with two or more classes.
 
 For additional documentation of LIMEaid, see:
 
