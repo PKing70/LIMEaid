@@ -148,5 +148,4 @@ LIMEaid (master)
 
 * [Patrick King](mailto:pking70@uw.edu)
 
-* [Javier Salido](mailto:javiers@uw.edu)[![Build Status](https://travis-ci.org/PKing70/LIMEaid.svg?branch=master)](https://travis-ci.org/PKing70/LIMEaid)
-[![Coverage Status](https://coveralls.io/repos/github/PKing70/LIMEaid/badge.svg?branch=master)]
+* [Javier Salido](mailto:javiers@uw.edu)
