@@ -33,10 +33,10 @@ The LIMEaid team has authored their own version of LIME.
 
 #### Python packages needed
 
-- [graphviz](http://graphviz.org/)
-- [matplotlib](https://matplotlib.org/)
+- [Graphviz](http://graphviz.org/)
+- [Matplotlib](https://matplotlib.org/)
 - [NumPy](https://www.numpy.org)
-- [sklearn](https://scikit-learn.org)
+- [scikit-learn](https://scikit-learn.org)
 
 #### License Information
 
