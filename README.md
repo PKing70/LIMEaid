@@ -51,6 +51,10 @@ __Important:__
 ../LIMEaid > python .\examples\LIME_Education_ex.py
 ```
 
+NOTE: If you are still running into issues with module path during import, this is a known issue.
+You can refer to [Issue 26](https://github.com/PKing70/LIMEaid/issues/26) which has details on the workaround that can be used.
+
+
 ## Data
 
 - [Source 1: Data.gov - College Scoreboard](https://catalog.data.gov/dataset/college-scorecard)
