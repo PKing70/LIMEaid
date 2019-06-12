@@ -24,6 +24,7 @@ def test_lime_fit():
     # Now we generate the random samples.
     # Note that because all four attributes are floats (continuous),
     # we do not call the discrete random generator.
+    # We do that later in the test.
     perturbed_samples = np.zeros(n)
     # The for loop calls the random sample generator four times,
     # once for each attribute in the Iris dataset.
@@ -54,7 +55,8 @@ def test_lime_fit():
                                          class_perturb_samples)
 
     # Test is simple, we just verity that LIME regression
-    # coefficients are not all zero.
+    # coefficients are not all zero, since we do not have 
+    # specific values to look for.
     flag = False
     for j in range(0, len(lime_b)):
         if lime_b[j] != 0:
@@ -75,5 +77,5 @@ def test_lime_fit_discrete():
     output = la.lime_sample(n, False, data_set.target, 0)
     # Test verifies that the set of random samples has the right
     # length. Since we are generating random numbers, there is not 
-    # much we can do.
+    # much else we can do.
     assert(len(output) == n)
