@@ -53,6 +53,8 @@ def test_lime_fit():
                                          perturbed_samples,
                                          class_perturb_samples)
 
+    # Test is simple, we just verity that LIME regression
+    # coefficients are not all zero.
     flag = False
     for j in range(0, len(lime_b)):
         if lime_b[j] != 0:
@@ -71,4 +73,7 @@ def test_lime_fit_discrete():
     # distribution as the classifications of the 150 instances in the
     # Iris dataset.
     output = la.lime_sample(n, False, data_set.target, 0)
+    # Test verifies that the set of random samples has the right
+    # length. Since we are generating random numbers, there is not 
+    # much we can do.
     assert(len(output) == n)
