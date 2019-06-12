@@ -11,20 +11,24 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import preprocessing
 import warnings
 
+COLUMNTODROP = 'SalaryClass'
+
 
 def fit_multiclass_logistic_regression(printscore=False):
     """
     This function fits sklearn's multiclass logistic regression
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
-    x = dataset.drop('SalaryClass', 1)
+    x = dataset.drop(COLUMNTODROP, 1)
     pre_scale_data = x.values
     min_max_scaler = preprocessing.MinMaxScaler()
     scaled = min_max_scaler.fit_transform(pre_scale_data)
     x = pd.DataFrame(scaled)
 
-    y = dataset['SalaryClass']
+    y = dataset[COLUMNTODROP]
     x_train, x_test, y_train, y_test = train_test_split(x,
                                                         y,
                                                         test_size=0.2,
@@ -44,15 +48,17 @@ def fit_random_forest(printscore=False):
     """
     This function fits sklearn's random forest classifier
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
-    x = dataset.drop('SalaryClass', 1)
+    x = dataset.drop(COLUMNTODROP, 1)
     pre_scale_data = x.values
     min_max_scaler = preprocessing.MinMaxScaler()
     scaled = min_max_scaler.fit_transform(pre_scale_data)
     x = pd.DataFrame(scaled)
 
-    y = dataset['SalaryClass']
+    y = dataset[COLUMNTODROP]
     x_train, x_test, y_train, y_test = train_test_split(x,
                                                         y,
                                                         test_size=0.2,
@@ -73,15 +79,17 @@ def fit_decision_tree(printscore=False):
     """
     This function fits sklearn's decision tree classifier
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
-    x = dataset.drop('SalaryClass', 1)
+    x = dataset.drop(COLUMNTODROP, 1)
     pre_scale_data = x.values
     min_max_scaler = preprocessing.MinMaxScaler()
     scaled = min_max_scaler.fit_transform(pre_scale_data)
     x = pd.DataFrame(scaled)
 
-    y = dataset['SalaryClass']
+    y = dataset[COLUMNTODROP]
     x_train, x_test, y_train, y_test = train_test_split(x,
                                                         y,
                                                         test_size=0.2,
