@@ -7,6 +7,15 @@ import pandas as pd
 def clean_and_merge_college_datasets():
     """
     This function cleans and joins the two datasets
+    The two datasets have a common field called School Name
+    but the values are not standardized. 
+    One of the datasets has School abbreviation included in the name
+    along with the region name in some cases
+    and there are differences in terms of special characters used
+    In addition, the function also hand selects features in merged dataset
+    and converts the Median Mid career mean salary into categorical type
+    with three classes: Low, Median and High
+    This will be the column used for Classification target
     """
     scorecard = gcd.get_most_recent_cohorts()
     salaries = gcd.get_salaries_by_region()
@@ -70,7 +79,8 @@ def clean_and_merge_college_datasets():
 
 def load_college_dataset():
     """
-    This function just returns the cleaned and joined college dataset
+    This function just invokes the clean and merge college dataset
+    to load the final dataset and returns to the callee function
     """
     dataset = clean_and_merge_college_datasets()
     return dataset

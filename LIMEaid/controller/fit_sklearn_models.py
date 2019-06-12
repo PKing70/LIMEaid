@@ -16,6 +16,8 @@ def fit_multiclass_logistic_regression(printscore=False):
     """
     This function fits sklearn's multiclass logistic regression
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
     x = dataset.drop('SalaryClass', 1)
@@ -44,6 +46,8 @@ def fit_random_forest(printscore=False):
     """
     This function fits sklearn's random forest classifier
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
     x = dataset.drop('SalaryClass', 1)
@@ -73,6 +77,8 @@ def fit_decision_tree(printscore=False):
     """
     This function fits sklearn's decision tree classifier
     on the college dataset and returns the model
+    The data values are first scaled using MinMaxScaler
+    and then split into train and test sets before using for fitting ML model
     """
     dataset = lcd.load_college_dataset()
     x = dataset.drop('SalaryClass', 1)
