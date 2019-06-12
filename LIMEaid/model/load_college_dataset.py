@@ -28,7 +28,7 @@ def clean_and_merge_college_datasets():
     """
     This function cleans and joins the two datasets
     The two datasets have a common field called School Name
-    but the values are not standardized. 
+    but the values are not standardized.
     One of the datasets has School abbreviation included in the name
     along with the region name in some cases
     and there are differences in terms of special characters used
@@ -57,13 +57,14 @@ def clean_and_merge_college_datasets():
                                                     HYPHEN_STR)
 
     # format the 'Mid-Career Median Salary' column
-    salaries[] = \
+    salaries[MID_CAREER_MEDIAN_SALARY] = \
         salaries[MID_CAREER_MEDIAN_SALARY].str.replace(DOLLAR_STR, EMPTY_STR)
     salaries[MID_CAREER_MEDIAN_SALARY] = \
         salaries[MID_CAREER_MEDIAN_SALARY].str.replace(COMMA_STR, EMPTY_STR)
     salaries[MID_CAREER_MEDIAN_SALARY] = \
-        salaries[MID_CAREER_MEDIAN_SALARY].str.replace(DOT_ZERO_ZERO_STR, EMPTY_STR)
-    salaries[] = pd.to_numeric(salaries[MID_CAREER_MEDIAN_SALARY])
+        salaries[MID_CAREER_MEDIAN_SALARY].str.replace(DOT_ZERO_ZERO_STR,
+                                                       EMPTY_STR)
+    salaries[SALARY] = pd.to_numeric(salaries[MID_CAREER_MEDIAN_SALARY])
 
     # Create new column SalaryClass to make the Salary ranges into classes
     salaries[SALARY_CLASS] = 100

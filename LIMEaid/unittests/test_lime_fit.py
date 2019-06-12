@@ -55,7 +55,7 @@ def test_lime_fit():
                                          class_perturb_samples)
 
     # Test is simple, we just verity that LIME regression
-    # coefficients are not all zero, since we do not have 
+    # coefficients are not all zero, since we do not have
     # specific values to look for.
     flag = False
     for j in range(0, len(lime_b)):
@@ -76,6 +76,6 @@ def test_lime_fit_discrete():
     # Iris dataset.
     output = la.lime_sample(n, False, data_set.target, 0)
     # Test verifies that the set of random samples has the right
-    # length. Since we are generating random numbers, there is not 
+    # length. Since we are generating random numbers, there is not
     # much else we can do.
     assert(len(output) == n)
